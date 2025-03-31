@@ -1,10 +1,14 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import LobbyScreen from './screens/Lobby'
 
 const App = () => {
   return (
-    <div>
-      asdf 
-    </div>
+  
+
+    <Routes>
+    <Route path='/' element={<LobbyScreen/>}></Route>
+    </Routes>
   )
 }
 
