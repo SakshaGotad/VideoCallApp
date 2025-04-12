@@ -3,11 +3,19 @@ const {Server} = require('socket.io');
 const bodyParser = require('body-parser');
 
 const app = express();
-const io = Server();
+const io = new  Server( 
+    {
+        cors :true,
+        origin: 'http://localhost:5173'
+    }
+);
 
 io.on('connection', socket => {
-    console.log('socket connected');
+    console.log('socket connected', socket.id);
     
+    socket.on("join-room", data=>{
+    console.log(data);
+    })
     
 })
 
